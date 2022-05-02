@@ -1,0 +1,8 @@
+Problem Statement : You have to design a system called ledger system which means there is 
+user and every user has multiple accounts. You have to design and implement following functionalities.
+1. Create X amount to users one of the account.
+2. Debit X amount from users one of the account.
+3. Transfer money from one account to another account for a single user.
+4. Transfer money from one account of user to another account of another user.
+5. Get balance for a user.
+6. Get balance for an account of a user.

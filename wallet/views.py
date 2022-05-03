@@ -128,3 +128,59 @@ def transfer_money_from_one_account_to_another_account_of_another_user(request):
             'message': 'User not created',
             'data': serializer.errors
         }, status=status.HTTP_400_BAD_REQUEST)
+
+
+# 
+# 
+#Get balance for a user.
+@api_view(['GET'])
+def get_balance_for_a_user(request):
+    if request.method == "GET":
+        data = request.data
+        print(data)
+        serializer = WalletSerializer(data=data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({
+                'status': 'success',
+                'error': False,
+                'error_message': '',
+                'message': 'User created successfully',
+                'data': serializer.data
+            }, status=status.HTTP_201_CREATED)
+
+        return Response({
+            'status': 'failed',
+            'error': True,
+            'error_message': '',
+            'message': 'User not created',
+            'data': serializer.errors
+        }, status=status.HTTP_400_BAD_REQUEST)
+
+
+# Get balance for an account of a user.
+@api_view(['GET'])
+def get_balance_for_an_account_of_a_user(request):
+    if request.method == "GET":
+        data = request.data
+        print(data)
+        serializer = WalletSerializer(data=data)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({
+                'status': 'success',
+                'error': False,
+                'error_message': '',
+                'message': 'User created successfully',
+                'data': serializer.data
+            }, status=status.HTTP_201_CREATED)
+
+        return Response({
+            'status': 'failed',
+            'error': True,
+            'error_message': '',
+            'message': 'User not created',
+            'data': serializer.errors
+        }, status=status.HTTP_400_BAD_REQUEST)
